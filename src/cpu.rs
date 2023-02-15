@@ -4,38 +4,11 @@ pub struct DB8 {
 }
 
 impl DB8 {
-    fn set_a(&mut self, value: u8) {
-        self.register_a = value
-    }
-    fn set_b(&mut self, value: u8) {
-        self.register_b = value
-    }
-    fn set_a_to_mem(&mut self, memory: &Vec<u8>, position: u8) {
-        self.register_a = memory[position as usize];
-    }
-    fn set_mem_to_a(&mut self, memory: &mut Vec<u8>, position: u8) {
-        memory[position as usize] = self.register_a;
-    }
-    fn add(&mut self) {
-        self.register_a = self.register_a + self.register_b
-    }
-    fn sub(&mut self) {
-        self.register_a = self.register_a - self.register_b
-    }
-    fn jump_to(&mut self, position: u8) -> usize {
-        position as usize - 1
-    }
-    fn jump_to_if_zero(&mut self, position: u8, current_position: usize) -> usize {
-        if self.register_a == 0 {
-            return position as usize - 1;
+    pub fn new() -> DB8 {
+        DB8 {
+            register_a: 0,
+            register_b: 0,
         }
-        current_position + 1
-    }
-    fn print(&mut self) {
-        print!("{}", self.register_a)
-    }
-    fn print_char(&mut self) {
-        print!("{}", char::from(self.register_a));
     }
     pub fn exec(&mut self, mut memory: Vec<u8>) {
         let mut i = 0;
@@ -71,10 +44,37 @@ impl DB8 {
             i += 1;
         }
     }
-    pub fn new() -> DB8 {
-        DB8 {
-            register_a: 0,
-            register_b: 0,
+    fn set_a(&mut self, value: u8) {
+        self.register_a = value
+    }
+    fn set_b(&mut self, value: u8) {
+        self.register_b = value
+    }
+    fn set_a_to_mem(&mut self, memory: &Vec<u8>, position: u8) {
+        self.register_a = memory[position as usize];
+    }
+    fn set_mem_to_a(&mut self, memory: &mut Vec<u8>, position: u8) {
+        memory[position as usize] = self.register_a;
+    }
+    fn add(&mut self) {
+        self.register_a = self.register_a + self.register_b
+    }
+    fn sub(&mut self) {
+        self.register_a = self.register_a - self.register_b
+    }
+    fn jump_to(&mut self, position: u8) -> usize {
+        position as usize - 1
+    }
+    fn jump_to_if_zero(&mut self, position: u8, current_position: usize) -> usize {
+        if self.register_a == 0 {
+            return position as usize - 1;
         }
+        current_position + 1
+    }
+    fn print(&mut self) {
+        print!("{}", self.register_a)
+    }
+    fn print_char(&mut self) {
+        print!("{}", char::from(self.register_a));
     }
 }
