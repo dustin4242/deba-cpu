@@ -34,7 +34,7 @@ halt!()
 - `add` & `subtract` respectively use `a + b` & `a - b`
 - `jump_to_if_zero!`, `print!`, & `print_char!` are respective to the a register's value
 
-To use these macros to easily set the memory just follow the layout below:
+To use these macros and easily set the memory just follow the layout below:
 ```rust
 let mut memory: Vec<u8> = memory_init![
 	set_a!(119), // Ascii Char "w"
