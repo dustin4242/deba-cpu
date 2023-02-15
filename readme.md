@@ -67,9 +67,9 @@ use cpu::DB8; // DB8 CPU Type
 ```
 - Just because we are using macros doesnt mean that it doesnt expand into numbers itself, make sure you keep that in mind when using any macros that use `mem_pos` stated above. Ex: 
 ```rust
-set_a!(value: u8);
+let x: Vec<u8> = set_a!(value);
 // expands into: 
-vec![1, value];
+let x: Vec<u8> = vec![1, value];
 ```
 
 Happy Coding! - Dustin
