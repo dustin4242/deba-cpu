@@ -65,5 +65,11 @@ mod macros; // Imports memory_init and instruction macros
 mod cpu;
 use cpu::DB8; // DB8 CPU Type
 ```
+- Just because we are using macros doesnt mean that it doesnt expand into numbers itself, make sure you keep that in mind when using any macros that use `mem_pos` stated above. Ex: 
+```rust
+set_a!(value: u8);
+// expands into: 
+vec![1, value];
+```
 
 Happy Coding! - Dustin
