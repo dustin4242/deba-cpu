@@ -15,7 +15,7 @@ let mut memory: Vec<u8> = memory_init![
 ***Note:*** *make sure memory is mutable for the `set_mem_to_a!()` instuction*
 
 ## How to use instructions:
-Now we can get into the fun part: **Programming**. Programming a DB-8 cpu's memory is relatively easy however it can get easy to get lost in the code since it is in a assembly-like syntax. To make programming the memory easier I have provided many macros for you guys to use:
+Now we can get into the fun part: **Programming**. Programming a DB-8 cpu's memory is relatively easy however it can be easy to get lost in the code since it is in a assembly-like syntax. To make programming the memory easier I have provided many macros for you guys to use:
 ```
 set_a!(value)
 set_b!(value)
