@@ -55,8 +55,10 @@ And then pass in the memory to the `exec()` function on the cpu:
 cpu.exec(memory);
 ```
 
+And that's it if you want the simple functionality of this cpu.
+
 ## Extra Notes:
-- In my initial main.rs file I have already included the necessary import however if you intend to make a seperate file for the memory or anything else here are the specified imports:
+- In my initial `src/main.rs` file I have already included the necessary imports however if you intend to make a seperate file for the memory or anything else here are the specified imports:
 ```rust
 mod macros; // Imports memory_init and instruction macros
 
