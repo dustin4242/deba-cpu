@@ -1,6 +1,7 @@
 # DB-8 Cpu Emulator
-This is a idea for a project that i've had for a very long time and I've finally made a emulator for it.
 ---
+This is a idea for a project that i've had for a very long time and I've finally made a emulator for it.
+
 ## How to initialize memory:
 Every DB-8 cpu also has a memory sequence to go along with it and the way we initialize said memory is using the `memory_init![]` macro.
 The macro takes in multiple `Vec<u8>` lists and concats each of them to make a final number sequence.
