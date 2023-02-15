@@ -3,8 +3,8 @@
 This is a idea for a project that i've had for a very long time and I've finally made a emulator for it.
 
 ## How to initialize memory:
-Every DB-8 cpu also has a memory sequence to go along with it and the way we initialize said memory is using the `memory_init![]` macro.
-The macro takes in multiple `Vec<u8>` lists and concats each of them to make a final number sequence.
+Every DB-8 cpu has a memory sequence and the way we initialize said memory is using the `memory_init![]` macro.
+This macro takes in `Vec<u8>` lists and concats each of them to make a final number sequence that passes into the cpu.
 
 **Ex:**
 ```rust
@@ -12,7 +12,7 @@ let mut memory: Vec<u8> = memory_init![
 	vec![11], // Halt Instruction
 ];
 ```
-***Note:*** *make sure memory is mutable for `set_mem_to_a!()` instuctions*
+***Note:*** *make sure memory is mutable for the `set_mem_to_a!()` instuction*
 
 ## How to use instructions:
 Now we can get into the fun part: **Programming**. Programming a DB-8 cpu's memory is relatively easy however it can get easy to get lost in the code since it is in a assembly-like syntax. To make programming the memory easier I have provided many macros for you guys to use:
@@ -32,7 +32,7 @@ halt!()
 ***Notes:***
 - `value` & `mem_pos` is of type `u8` to respect the memory's layout
 - `add` & `subtract` respectively use `a + b` & `a - b`
-- `jump_to_if_zero!`, `print!`, & `print_char!` are all respective to the value in the a register
+- `jump_to_if_zero!`, `print!`, & `print_char!` are respective to the a register's value
 
 To use these macros to easily set the memory just follow the layout below:
 ```rust
@@ -55,7 +55,7 @@ And then pass in the memory to the `exec()` function on the cpu:
 cpu.exec(memory);
 ```
 
-## Final Notes:
+## Extra Notes:
 - In my initial main.rs file I have already included the necessary import however if you intend to make a seperate file for the memory or anything else here are the specified imports:
 ```rust
 mod macros; // Imports memory_init and instruction macros
@@ -63,3 +63,5 @@ mod macros; // Imports memory_init and instruction macros
 mod cpu;
 use cpu::DB8; // DB8 CPU Type
 ```
+
+Happy Coding! - Dustin
