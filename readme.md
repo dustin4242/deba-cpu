@@ -41,7 +41,7 @@ To use these macros and easily set the memory just follow the layout below:
 pub fn example() -> Vec<u8> {
 	memory_init![
 		set_a!(119), // Ascii Char "w"
-		set_b!(32), // Set B to 32
+		set_b!(32),
 		sub!(), // Will subtract B Register from A Register
 		print_char!(), // Will print "W" in A Register
 	]
