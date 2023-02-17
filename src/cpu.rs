@@ -4,6 +4,7 @@ pub struct DB8 {
 }
 
 impl DB8 {
+    // Usable Functions
     pub fn new() -> DB8 {
         DB8 {
             register_a: 0,
@@ -44,6 +45,8 @@ impl DB8 {
             i += 1;
         }
     }
+
+    // Instruction Functions
     fn set_a(&mut self, value: u8) {
         self.register_a = value
     }
