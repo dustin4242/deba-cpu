@@ -62,12 +62,6 @@ cpu.exec(memory::example());
 And that's it if you want the simple functionality of this cpu.
 
 ## Extra Notes:
-- In my initial `src/main.rs` file I have already included the necessary imports however if you intend to make a seperate file for the memory or anything else here are the specified imports:
-```rust
-mod cpu;
-use cpu::DB8; // DB8 CPU Type
-```
-
 - Just because we are using macros doesnt mean that it doesnt expand into numbers itself, make sure you keep that in mind when using any macros that use `mem_pos` stated above. Ex: 
 ```rust
 let x: Vec<u8> = set_a!(value);
