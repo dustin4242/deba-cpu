@@ -18,3 +18,21 @@ pub fn hello_world() -> Vec<u8> {
         ]
     ]
 }
+
+pub fn for_loop() -> Vec<u8> {
+    memory_init![
+        set_b!(1),
+        set_a_to_mem!(12),
+        sub!(),
+        set_mem_to_a!(12),
+        jump_to_if_zero!(11),
+        jump_to!(13),
+        halt!(),
+        vec![27],
+        set_a!(97),
+        print_char!(),
+        add!(),
+        set_mem_to_a!(14),
+        jump_to!(2)
+    ]
+}
