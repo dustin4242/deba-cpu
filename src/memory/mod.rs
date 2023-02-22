@@ -19,6 +19,7 @@ pub fn hello_world() -> Vec<u8> {
     ]
 }
 
+#[allow(dead_code)]
 pub fn for_loop() -> Vec<u8> {
     memory_init![
         set_b!(1),
