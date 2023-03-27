@@ -5,69 +5,57 @@ macro_rules! no_op {
     };
 }
 #[macro_export]
-macro_rules! set_a {
-    ($value: expr) => {
-        vec![1, $value]
+macro_rules! set_register {
+    ($register: expr, $value: expr) => {
+        vec![1, $register, $value]
     };
 }
 #[macro_export]
-macro_rules! set_b {
-    ($value: expr) => {
-        vec![2, $value]
+macro_rules! set_reg_to_mem {
+    ($register:expr, $pos: expr) => {
+        vec![2, $register, $pos]
     };
 }
 #[macro_export]
-macro_rules! set_a_to_mem {
-    ($value: expr) => {
-        vec![3, $value]
-    };
-}
-#[macro_export]
-macro_rules! set_mem_to_a {
-    ($value: expr) => {
-        vec![4, $value]
+macro_rules! set_mem_to_reg {
+    ($pos: expr, $register: expr) => {
+        vec![3, $pos, $register]
     };
 }
 #[macro_export]
 macro_rules! add {
-    () => {
-        vec![5]
+    ($register_1: expr, $register_2: expr) => {
+        vec![4, $register_1, $register_2]
     };
 }
 #[macro_export]
 macro_rules! sub {
-    () => {
-        vec![6]
+    ($register_1: expr, $register_2: expr) => {
+        vec![5, $register_1, $register_2]
     };
 }
 #[macro_export]
 macro_rules! jump_to {
     ($value: expr) => {
-        vec![7, $value]
+        vec![6, $value]
     };
 }
 #[macro_export]
 macro_rules! jump_to_if_zero {
     ($value: expr) => {
-        vec![8, $value]
+        vec![7, $value]
     };
 }
 #[macro_export]
 macro_rules! print {
-    () => {
-        vec![9]
-    };
-}
-#[macro_export]
-macro_rules! print_char {
-    () => {
-        vec![10]
+    ($register: expr) => {
+        vec![8, $register]
     };
 }
 #[macro_export]
 macro_rules! halt {
     () => {
-        vec![11]
+        vec![9]
     };
 }
 #[macro_export]
