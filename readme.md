@@ -1,9 +1,9 @@
-# DB-8 Cpu Emulator
+# Deba Cpu Emulator
 ---
 This is a idea for a project that i've had for a very long time and I've finally made a emulator for it.
 
 ## How to initialize memory:
-Every DB-8 cpu has a memory sequence, and the way we initialize said memory is using the `memory_init![]` macro inside of the `src/memory/mod.rs` file.
+Every Deba cpu has a memory sequence, and the way we initialize said memory is using the `memory_init![]` macro inside of the `src/memory/mod.rs` file.
 This macro takes in `Vec<u8>` lists and concats each of them to make a final number sequence that passes into the cpu.
 
 **Ex:**
@@ -17,7 +17,7 @@ pub fn example() -> Vec<u8> {
 ***Note:*** *make sure memory is mutable for the `set_mem_to_a!()` instuction*
 
 ## How to use instructions:
-Now we can get into the fun part: **Programming**. Programming a DB-8 cpu's memory is relatively easy however it can be easy to get lost in the code since it is in a assembly-like syntax. To make programming the memory easier I have provided many macros for you guys to use:
+Now we can get into the fun part: **Programming**. Programming a Deba cpu's memory is relatively easy however it can be easy to get lost in the code since it is in a assembly-like syntax. To make programming the memory easier I have provided many macros for you guys to use:
 ```
 set_a!(value)
 set_b!(value)
@@ -49,7 +49,7 @@ pub fn example() -> Vec<u8> {
 ```
 
 ## How to execute memory:
-We now need to initialize a new cpu to execute this memory we set and we can easily do that by using the DB8 type in our `src/main.rs` file:
+We now need to initialize a new cpu to execute this memory we set and we can easily do that by using the Deba type in our `src/main.rs` file:
 ```rust
 let mut cpu = DB8::new();
 ```
